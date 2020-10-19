@@ -10,6 +10,7 @@
 
  h1 {
    padding-bottom: 20px;
+   color: #64e5f9
  }
 
  h3 {
@@ -23,6 +24,7 @@
   justify-content: center;
   align-items: center;
   margin: 10%;
+  margin-top: 300px;
 }
 
 .container {
@@ -73,12 +75,7 @@ box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
   transform: rotate(-90deg);
   right: -75px;
   bottom: 100px;
-  transition: all 0.3s ease 0.1s;
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 2s;
+  transition: 3s ease-in-out;
   z-index: 10;
 }
 
@@ -92,7 +89,7 @@ box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
 }
 
 .mailto:hover {
-  color: #8F98A7;
+  color: #64e5f9;
 }
 
 
@@ -106,4 +103,71 @@ box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
     padding: 2em 1em;
     max-width: 300px;
   }
+}
+
+/* Dark Mode */
+.darkMode {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #ff4500;
+  display: flex;
+  border-radius: 50px;
+  height: 26px;
+  width: 50px;
+  position: relative;
+}
+
+.ball {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+  transform: translateX(24px);
+  background-color: white;
+}
+
+.checkbox:checked+.label {
+  background-color: black;
+}
+
+body.dark {
+  color: var(--White);
+  background: white;
+}
+
+body.dark .container {
+  background: white;
+  color: #363944;
+}
+
+
+h5 {
+  padding-right: 10px;
+}
+
+.head {
+  position: absolute;
+  z-index: -100;
+  height: 600px;
+  width: 600px;
+  top: 70px;
+  right: -5px;
 }
